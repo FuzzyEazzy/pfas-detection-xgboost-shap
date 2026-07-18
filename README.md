@@ -1,5 +1,17 @@
 # Predicting PFAS Detection in US Drinking Water (XGBoost + SHAP)
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](PASTE_YOUR_COLAB_SHARE_LINK_HERE)
+
+## How to Run
+
+1. Open the notebook in Google Colab using the badge above, or download `final_PFAS_code.ipynb` and open it in Jupyter.
+2. Run the cells in order. The first cell downloads the EPA UCMR 5 data directly from epa.gov, so no manual download is needed.
+3. Dependencies: pandas, xgboost, shap, scikit-learn, matplotlib, plotly. The notebook installs xgboost and shap itself; the rest come preinstalled in Colab.
+
+## Data Source
+
+The notebook fetches the raw EPA UCMR 5 occurrence data directly from epa.gov at run time (see the first cell). The original dataset page is here: [EPA UCMR 5 Occurrence Data](https://www.epa.gov/dwucmr/fifth-unregulated-contaminant-monitoring-rule)
+
 A machine learning analysis of EPA national monitoring data. It predicts whether a public water system has detectable PFAS, looks at what is linked to detection, and examines which specific PFAS chemicals show up most and where.
 
 ## Goal
@@ -40,23 +52,23 @@ Macro-F1 is used instead of plain accuracy because the classes are imbalanced, a
 
 The confusion matrix below shows the same test-set result as a picture: how many systems the model got right and wrong in each class. It makes the pattern from the table easy to see at a glance, that the model catches most systems that do have PFAS, and misses more of the ones that do not.
 
-![Confusion matrix for the XGBoost model on the test set](confusion_matrix.png)
+![Confusion matrix for the XGBoost model on the test set](images/confusion_matrix.png)
 
 ## What Is Linked to PFAS Detection
 
-![SHAP feature importance](shap_drivers.png)
+![SHAP feature importance](images/shap_drivers.png)
 
 SHAP and the raw detection rates agree on the main patterns:
 
-![PFAS rate by water source type](pfas_by_water_type.png)
+![PFAS rate by water source type](images/pfas_by_water_type.png)
 
 Groundwater and mixed-source systems show higher PFAS rates (66% and 74%) than surface water systems (51%). This fits the idea that PFAS are long-lasting compounds that build up in groundwater rather than washing through surface systems.
 
-![PFAS rate by EPA region](pfas_by_region.png)
+![PFAS rate by EPA region](images/pfas_by_region.png)
 
 Detection varies a lot by region, from 38% in Region 10 (Pacific Northwest) to over 80% in Regions 6 and 7 (south-central and central US).
 
-![PFAS rate by state](pfas_by_state_map.png)
+![PFAS rate by state](images/pfas_by_state_map.png)
 
 Larger water systems also show higher PFAS rates than smaller ones.
 
