@@ -1,6 +1,6 @@
 # Predicting PFAS Detection in US Drinking Water (XGBoost + SHAP)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](PASTE_YOUR_COLAB_SHARE_LINK_HERE)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10G7PL-G92APu4W8UZ7GIpUR-SttVbi4N?usp=sharing)
 
 ## How to Run
 
